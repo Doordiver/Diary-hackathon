@@ -9,23 +9,62 @@
         <script defer src="./script.js"></script>
     </head>
     <body>
+        <h1>My Digital Diary</h1>
         <section id="inputSection">
-
+            <form>
+                <label for="diaryInput">Write your new entry here</label>
+                <input id="diaryInput" name="entry" type="text" placeholder="express you inner self" required/>
+                <select name="category" id="category">
+                    <option value="Love">Love</option>
+                    <option value="School/Work">School/Work</option>
+                    <option value="Family">Family</option>
+                    <option value="Generic">Generic</option>
+                </select>
+                <input type="submit" value="Write It" />
+            </form>
         </section>
+        <p></p>
         <section id="displayAllSection">
-
+            <form>
+                <label for="displayAll">See all your past</label>
+                <input type="submit" value="Show Me" />
+            </form>
+            <ul>
+            </ul>
         </section>
         <section id="displayByID">
-
+            <form>
+                <label for="idInput">Select an entry by number</label>
+                <input id="idInput" name="entry" type="text" placeholder="search your past" required/>
+                <input type="submit" value="Find It" />
+            </form>
         </section>
+        <p></p>
         <section id ="displayBySearch">
 
+            <form>
+                <label for="searchInput">Select an entry by</label>
+                <select name="searchType" id="searchType">
+                    <option value="Date">Date Search</option>
+                    <option value="Category">Category Search</option>
+                </select>
+                
+                <input id="searchInput" name="entry" type="text" placeholder="search your past" required/>
+                <input type="submit" value="Submit" />
+            </form>
         </section>
+        <p></p>
         <section id="updateSection">
-
+            <Label for="updateInput">Update entry number</Label>
+            <input id="updateInputId" name="entry" type="text" placeholder="number here" required/>
+            <input id="updateInputNewText" name="entry" type="text" placeholder="Update your thoughts here" required/>
+            <input type="submit" value="Submit" />
         </section>
+        <p></p>
         <section id="deleteSection">
-            
+            <Label for="deleteInput">Entry number to delete</Label>
+            <input id="deleteInputId" name="entry" type="text" placeholder="number here" required/>
+            <input type="submit" value="Submit" />
         </section>
     </body>
 </html>

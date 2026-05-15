@@ -9,10 +9,30 @@ async function index(req, res) {
     }
 }
 
-async function show(req, res) {
+async function showEntry(req, res) {
     try {
         let id = req.params.id;
-        const diary = await Diary.getOneById(id);
+        const diary = await Diary.getOneByEntryId(id);
+        res.status(200).json(diary);
+    } catch (err) {
+        res.status(404).json({ error: err.message });
+    }
+}
+
+async function showCategory(req, res) {
+    try {
+        let category = req.params.category;
+        const diary = await Diary.getOneByCategory(category);
+        res.status(200).json(diary);
+    } catch (err) {
+        res.status(404).json({ error: err.message });
+    }
+}
+
+async function showDate(req, res) {
+    try {
+        let date = req.params.date;
+        const diary = await Diary.getOneByEntryDate(date);
         res.status(200).json(diary);
     } catch (err) {
         res.status(404).json({ error: err.message });
@@ -33,7 +53,7 @@ async function update(req, res) {
     try {
         const id = req.params.id;
         const data = req.body;
-        const diary = await Diary.getOneById(id);
+        const diary = await Diary.getOneByEntryId(id);
         const result = await diary.update(data);
         res.status(200).json(result);
     } catch (err) {
@@ -52,4 +72,4 @@ async function destroy(req, res) {
     }
 };
 
-module.exports = { index, show, create, update, destroy }
+module.exports = { index, showEntry, showCategory, showDate, create, update, destroy }

@@ -1,11 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-const diaryRouter = require('./3.Routers/diary');
+const diaryRouter = require('./3.Routers/diaries');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/diary', diaryRouter);
+app.use('/diaries', diaryRouter);
 
 module.exports = app
